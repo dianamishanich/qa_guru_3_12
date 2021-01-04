@@ -1,30 +1,22 @@
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byName;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
 public class SimpleTest {
 
         @Test
-        void test1() {
-            assertTrue(true);
-        }
+        void selenideSearchTest() {
+            // Открыть google
+            open("https://google.com");
 
-        @Test
-        void test2() {
-            assertTrue(false);
-        }
+            // Ввести Selenide в поиск
+            $(byName("q")).setValue("Selenide").pressEnter();
 
-        @Test
-        @Disabled
-        void test3() {
-            assertTrue(false);
-        }
-
-        @Test
-        @Disabled
-        void test4() {
-            assertTrue(false);
+            // Проверить, что Selenide появился в результатах поиска
+            $("html").shouldHave(text("selenide.org"));
         }
 
 }
