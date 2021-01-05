@@ -9,14 +9,15 @@ public class SimpleTest {
 
         @Test
         void selenideSearchTest() {
-            // Открыть google
             open("https://google.com");
-
-            // Ввести Selenide в поиск
             $(byName("q")).setValue("Selenide").pressEnter();
-
-            // Проверить, что Selenide появился в результатах поиска
             $("html").shouldHave(text("selenide.org"));
         }
+        @Test
+        void selenideSearchYandex() {
+            open("https://yandex.ru");
+            $(byName("text")).setValue("Selenide").pressEnter();
+            $("html").shouldHave(text("selenide.org"));
 
+        }
 }
