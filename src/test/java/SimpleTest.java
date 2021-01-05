@@ -13,11 +13,11 @@ public class SimpleTest {
             $(byName("q")).setValue("Selenide").pressEnter();
             $("html").shouldHave(text("selenide.org"));
         }
+
         @Test
         void selenideSearchYandex() {
             open("https://yandex.ru");
             $(byName("text")).setValue("Selenide").pressEnter();
             $("html").shouldHave(text("selenide.org"));
-
         }
 }
