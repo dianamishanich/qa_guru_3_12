@@ -9,7 +9,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class SimpleTest {
 
 
-    public class SimpleTests {
         @Test
         void successTest() {
             assertEquals(10/5, 2);
@@ -20,7 +19,6 @@ public class SimpleTest {
             assertEquals(10/5, 4);
 
         }
-    }
 
         @Test
         void selenideSearchTest() {
