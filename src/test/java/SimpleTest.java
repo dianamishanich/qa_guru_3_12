@@ -4,8 +4,23 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byName;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SimpleTest {
+
+
+    public class SimpleTests {
+        @Test
+        void successTest() {
+            assertEquals(10/5, 2);
+        }
+
+        @Test
+        void negativeTest() {
+            assertEquals(10/5, 4);
+
+        }
+    }
 
         @Test
         void selenideSearchTest() {
